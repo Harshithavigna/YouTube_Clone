@@ -1,4 +1,4 @@
-\# YouTube Clone (MERN Stack)
+**\# YouTube Clone (MERN Stack)**
 
 
 
@@ -6,7 +6,7 @@ A full-stack YouTube clone built with MongoDB, Express, React (Vite), and Node.j
 
 
 
-\## Features
+**\## Features**
 
 \- \*\*Home page\*\*: header, toggleable sidebar, category filter buttons, responsive video grid
 
@@ -24,7 +24,7 @@ A full-stack YouTube clone built with MongoDB, Express, React (Vite), and Node.j
 
 
 
-\## Project Structure
+**\## Project Structure**
 youtube-clone/
 
 backend/ Express + MongoDB API (ES Modules)
@@ -61,7 +61,7 @@ App.jsx, main.jsx, index.css
 
 
 
-\### 1. Backend
+**\### 1. Backend**
 cd backend
 
 npm install
@@ -86,7 +86,7 @@ Sample login after seeding: `john@example.com` / `password123`
 
 
 
-\### 2. Frontend
+**\### 2. Frontend**
 cd frontend
 
 npm install
@@ -130,7 +130,7 @@ npm run dev # starts on http://localhost:5173
 
 
 
-\## Design Notes
+**\## Design Notes**
 
 \- ES Modules used throughout (no CommonJS `require`)
 
