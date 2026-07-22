@@ -1,12 +1,10 @@
 import jwt from "jsonwebtoken";
 import User from "../models/User.js";
-
 // Signs a JWT containing the user's id.
 const generateToken = (id) =>
   jwt.sign({ id }, process.env.JWT_SECRET, {
     expiresIn: process.env.JWT_EXPIRES_IN || "7d",
   });
-
 const validateRegisterInput = ({ username, email, password }) => {
   const errors = {};
   if (!username || username.trim().length < 3) {
@@ -20,7 +18,6 @@ const validateRegisterInput = ({ username, email, password }) => {
   }
   return errors;
 };
-
 // POST /api/auth/register
 export const registerUser = async (req, res) => {
   try {
@@ -40,7 +37,6 @@ export const registerUser = async (req, res) => {
             : "Username is already taken",
       });
     }
-
     const user = await User.create({ username, email, password });
 
     return res.status(201).json({
@@ -60,19 +56,15 @@ export const loginUser = async (req, res) => {
     if (!email || !password) {
       return res.status(400).json({ message: "Email and password are required" });
     }
-
     const user = await User.findOne({ email });
     if (!user) {
       return res.status(401).json({ message: "Invalid email or password" });
     }
-
     const isMatch = await user.comparePassword(password);
     if (!isMatch) {
       return res.status(401).json({ message: "Invalid email or password" });
     }
-
     const token = generateToken(user._id);
-
     return res.status(200).json({
       message: "Login successful",
       token,
@@ -88,7 +80,6 @@ export const loginUser = async (req, res) => {
     return res.status(500).json({ message: "Server error during login", error: error.message });
   }
 };
-
 // GET /api/auth/me (protected)
 export const getCurrentUser = async (req, res) => {
   return res.status(200).json({ user: req.user });
