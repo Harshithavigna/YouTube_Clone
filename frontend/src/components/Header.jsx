@@ -1,17 +1,14 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-
 const Header = ({ onToggleSidebar }) => {
   const [searchText, setSearchText] = useState("");
   const { user, logout } = useAuth();
   const navigate = useNavigate();
-
   const handleSearch = (e) => {
     e.preventDefault();
     navigate(`/?search=${encodeURIComponent(searchText)}`);
   };
-
   return (
     <header className="header">
       <div className="header-left">
@@ -22,7 +19,6 @@ const Header = ({ onToggleSidebar }) => {
           ▶️ TubeClone
         </span>
       </div>
-
       <form className="header-search" onSubmit={handleSearch}>
         <input
           type="text"
@@ -32,7 +28,6 @@ const Header = ({ onToggleSidebar }) => {
         />
         <button type="submit" aria-label="Search">🔍</button>
       </form>
-
       <div className="header-right">
         {user ? (
           <>
@@ -53,5 +48,4 @@ const Header = ({ onToggleSidebar }) => {
     </header>
   );
 };
-
 export default Header;
