@@ -8,7 +8,6 @@ const categories = [
   "Entertainment",
   "Technology",
 ];
-
 const FilterButtons = ({ activeCategory, onSelect }) => {
   return (
     <div className="filter-bar">
@@ -24,5 +23,4 @@ const FilterButtons = ({ activeCategory, onSelect }) => {
     </div>
   );
 };
-
 export default FilterButtons;
