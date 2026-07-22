@@ -7,10 +7,8 @@ import Auth from "./pages/Auth";
 import VideoPlayer from "./pages/VideoPlayer";
 import Channel from "./pages/Channel";
 import CreateChannel from "./pages/CreateChannel";
-
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
-
   return (
     <div className="app">
       <Header onToggleSidebar={() => setSidebarOpen((o) => !o)} />
@@ -29,5 +27,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
