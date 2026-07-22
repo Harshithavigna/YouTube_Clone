@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-
 const links = [
   { icon: "🏠", label: "Home", path: "/" },
   { icon: "🔥", label: "Trending", path: "/?category=Entertainment" },
@@ -7,10 +6,8 @@ const links = [
   { icon: "🎮", label: "Gaming", path: "/?category=Gaming" },
   { icon: "📚", label: "Education", path: "/?category=Education" },
 ];
-
 const Sidebar = ({ open }) => {
   const navigate = useNavigate();
-
   return (
     <aside className={`sidebar ${open ? "open" : "closed"}`}>
       {links.map((link) => (
@@ -22,5 +19,4 @@ const Sidebar = ({ open }) => {
     </aside>
   );
 };
-
 export default Sidebar;
